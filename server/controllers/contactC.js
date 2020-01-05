@@ -3,6 +3,7 @@ const { Contact } = require('../models')
 class Controller {
 
     static showData(req, res, next) {
+        console.log('showData')
         Contact.findAll()
             .then((contact) => {
                 res.status(200).json(contact)
@@ -12,7 +13,8 @@ class Controller {
             });
     }
 
-    static createGroup(req, res, next) {
+    static createContact(req, res, next) {
+        console.log(req.body);
         const { name, phone, quote } = req.body
         Contact.create({
             name: name,
@@ -27,11 +29,12 @@ class Controller {
     }
 
     static updateData(req, res, next) {
+        console.log(req.body);
         const { name, phone, quote } = req.body
         Contact.findByPk(req.params.id)
             .then((contact) => {
                 if (!contact) res.status(404).json({ msg: 'contact not found' })
-                Contact.update({
+                return Contact.update({
                     name: name,
                     phone: phone,
                     quote: quote

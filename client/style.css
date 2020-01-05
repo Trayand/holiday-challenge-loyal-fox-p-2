@@ -1,0 +1,29 @@
+#adding {
+    text-align: center;
+    margin: 30px;
+}
+
+#homerun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    margin: auto;
+}
+
+.quoteClass{
+    max-width: 250px;
+}
+
+th{
+    width: 250px;
+}
+
+th:first-child{
+    width: 80px;
+}
+
+th:last-child{
+    width: 165px;
+}

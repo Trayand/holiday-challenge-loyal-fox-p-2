@@ -3,7 +3,7 @@ const ContactController = require('../controllers/contactC')
 
 router.get('/', ContactController.showData)
 
-router.post('/', ContactController.createGroup)
+router.post('/', ContactController.createContact)
 
 router.put('/:id', ContactController.updateData)
 

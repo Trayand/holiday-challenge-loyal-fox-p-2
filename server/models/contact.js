@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
     quote: {
       type: DataTypes.STRING,
       validate: {
-        notEmpty: true,
         len: [0, 70]
       }
     }

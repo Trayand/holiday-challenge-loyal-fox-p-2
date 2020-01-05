@@ -13,72 +13,109 @@
 </head>
 
 <body>
-    <div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
+    <div id="homerun">
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" minlength="4" maxlength="15"
-                                    placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPhone">Phone Number</label>
-                                <input type="text" class="form-control" id="inputPhone" minlength="8" maxlength="13"
-                                    placeholder="Phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputQuote">Quote</label>
-                                <input type="text" class="form-control" id="inputQuote" placeholder="Quote"
-                                    maxlength="70">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </form>
+
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createContactModal"
+                id="adding">
+                Add contact
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="createContactModal" tabindex="-1" role="dialog"
+                aria-labelledby="createContactModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createContactModalLabel">Add Contact</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form-add-contact">
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName" minlength="4" maxlength="15"
+                                        placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPhone">Phone Number</label>
+                                    <input type="text" class="form-control" id="inputPhone" minlength="8" maxlength="13"
+                                        placeholder="Phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputQuote">Quote</label>
+                                    <input type="text" class="form-control" id="inputQuote" maxlength="70"
+                                        placeholder="Quote">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- edit modal -->
+            <div class="modal fade" id="editContactModal" tabindex="-1" role="dialog"
+                aria-labelledby="editContactModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editContactModalLabel">Edit Contact <span id="contactId"></span>
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form-edit-contact">
+                                <div class="form-group">
+                                    <label for="editName">Name</label>
+                                    <input type="text" class="form-control" id="editName" minlength="4" maxlength="15"
+                                        placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPhone">Phone Number</label>
+                                    <input type="text" class="form-control" id="editPhone" minlength="8" maxlength="13"
+                                        placeholder="Phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editQuote">Quote</label>
+                                    <input type="text" class="form-control" id="editQuote" maxlength="70"
+                                        placeholder="Quote">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- close edit modal -->
         </div>
-    </div>
 
-    <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">/</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Quote</th>
-                    <th scope="col">Edit/Delete</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td><button>edit</button><button>delete</button></td>
-                </tr> -->
-            </tbody>
-        </table>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Quote</th>
+                        <th scope="col">Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -89,6 +126,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="main.js"></script>
 </body>
 
