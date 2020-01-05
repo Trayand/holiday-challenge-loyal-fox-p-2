@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model
 
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: true,
         is: ["^[a-z]+$", 'i'],
-        len: [4, 15]
+        len: [4, 13]
       }
     },
     phone: {

@@ -28,7 +28,7 @@ class Controller {
 
     static updateData(req, res, next) {
         const { name, phone, quote } = req.body
-        Contact.findByPK(req.params.id)
+        Contact.findByPk(req.params.id)
             .then((contact) => {
                 if (!contact) res.status(404).json({ msg: 'contact not found' })
                 Contact.update({
@@ -48,7 +48,7 @@ class Controller {
 
     static deleteData(req, res, next) {
         let data;
-        Contact.findByPK(req.params.id)
+        Contact.findByPk(req.params.id)
             .then((contact) => {
                 if (!contact) res.status(404).json({ msg: 'contact not found' })
                 else data = contact
